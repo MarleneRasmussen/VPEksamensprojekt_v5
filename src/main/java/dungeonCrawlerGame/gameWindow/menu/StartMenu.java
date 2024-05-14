@@ -2,6 +2,7 @@ package dungeonCrawlerGame.gameWindow.menu;
 
 import dungeonCrawlerGame.Config;
 import dungeonCrawlerGame.gameManager.GameLoop;
+import dungeonCrawlerGame.gameWindow.GameFrame;
 import dungeonCrawlerGame.gameWindow.GameInit;
 
 import javax.swing.*;
@@ -77,7 +78,7 @@ public class StartMenu extends JFrame implements ActionListener {
         if (e.getSource() == startButton) {
             GameInit game = new GameInit(Config.LOCATION_WIDTH, Config.LOCATION_HEIGHT);
             new Thread(new GameLoop(game)).start();
-            dispose();
+
         }
         if (e.getSource() == exitButton) {
             System.exit(0);

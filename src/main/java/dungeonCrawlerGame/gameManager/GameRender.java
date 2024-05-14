@@ -9,19 +9,19 @@ import dungeonCrawlerGame.locations.LocationRender;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
-import static dungeonCrawlerGame.gameWindow.GameFrame.canvas;
+import static dungeonCrawlerGame.gameWindow.GameFrame.game;
 
 public class GameRender {
 
     public static void renderGame(){
 
-        BufferStrategy bufferStrategy = canvas.getBufferStrategy();
+        BufferStrategy bufferStrategy = game.getBufferStrategy();
         Graphics graphics = bufferStrategy.getDrawGraphics();
         Graphics2D g2d = (Graphics2D) graphics;
 
         //Set background color
         graphics.setColor(Color.BLACK);
-        graphics.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
+        graphics.fillRect(0, 0, game.getWidth(), game.getHeight());
 
         //Draw current location
         LocationRender.drawCurrentLocation(g2d);

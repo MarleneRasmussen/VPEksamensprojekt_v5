@@ -6,7 +6,6 @@ import dungeonCrawlerGame.entities.monster.Monster;
 import dungeonCrawlerGame.entities.player.Player;
 import dungeonCrawlerGame.gameWindow.GameInit;
 import dungeonCrawlerGame.items.ItemObject;
-import dungeonCrawlerGame.items.ItemProperties;
 import dungeonCrawlerGame.items.Items;
 import dungeonCrawlerGame.locations.DungeonMap;
 import dungeonCrawlerGame.locations.Location;
@@ -140,25 +139,25 @@ public class CollisionChecker {
             case UP:
                 entity.getBounds().y -= entity.getSpeed();
                 if(entity.getBounds().intersects(GameInit.player.getBounds())){
-                    entity.setCollision(true);
+                    entity.setPlayerMonsterCollision(true);
                 }
                 break;
             case DOWN:
                 entity.getBounds().y += entity.getSpeed();
                 if(entity.getBounds().intersects(GameInit.player.getBounds())){
-                    entity.setCollision(true);
+                    entity.setPlayerMonsterCollision(true);
                 }
                 break;
             case LEFT:
                 entity.getBounds().x -= entity.getSpeed();
                 if(entity.getBounds().intersects(GameInit.player.getBounds())){
-                    entity.setCollision(true);
+                    entity.setPlayerMonsterCollision(true);
                 }
                 break;
             case RIGHT:
                 entity.getBounds().x += entity.getSpeed();
                 if(entity.getBounds().intersects(GameInit.player.getBounds())){
-                    entity.setCollision(true);
+                    entity.setPlayerMonsterCollision(true);
                 }
                 break;
         }

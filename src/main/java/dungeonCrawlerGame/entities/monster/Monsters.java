@@ -68,7 +68,6 @@ public class Monsters {
                 }
             }
         }
-
     }
 
     public static List<Monster> getMonsters()

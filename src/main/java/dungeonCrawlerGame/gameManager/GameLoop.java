@@ -1,7 +1,9 @@
 package dungeonCrawlerGame.gameManager;
 
 import dungeonCrawlerGame.Config;
+import dungeonCrawlerGame.gameWindow.GameFrame;
 import dungeonCrawlerGame.gameWindow.GameInit;
+import dungeonCrawlerGame.gameWindow.menu.GameOver;
 
 public class GameLoop implements Runnable{
 
@@ -17,7 +19,7 @@ public class GameLoop implements Runnable{
         running = true;
         double nextDraw = System.nanoTime() + Config.INTERVAL;
 
-        while (running){
+        while (running && GameInit.gameState != GameInit.gameOver){
             GameInit.updateGame();
             GameInit.renderGame();
 
@@ -30,6 +32,10 @@ public class GameLoop implements Runnable{
             catch (InterruptedException e){
                 throw new RuntimeException(e);
             }
+        }
+        if (GameInit.gameState == GameInit.gameOver){
+            Thread.currentThread().interrupt();
+            GameFrame.frame.dispose();
         }
     }
 }

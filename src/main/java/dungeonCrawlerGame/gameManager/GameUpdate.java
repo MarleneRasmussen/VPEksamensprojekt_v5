@@ -1,7 +1,9 @@
 package dungeonCrawlerGame.gameManager;
 
 import dungeonCrawlerGame.entities.player.PlayerState;
+import dungeonCrawlerGame.gameWindow.GameFrame;
 import dungeonCrawlerGame.gameWindow.GameInit;
+import dungeonCrawlerGame.gameWindow.menu.GameOver;
 import dungeonCrawlerGame.locations.DungeonMap;
 import dungeonCrawlerGame.locations.LocationRender;
 
@@ -21,6 +23,10 @@ public class GameUpdate {
                         GameInit.monsters.checkDead();
                         GameInit.items.checkIfPickedUp();
                         PlayerState.useFromInventory();
+                }
+                if (GameInit.player.getHealth() <= 0){
+                        GameInit.gameState = GameInit.gameOver;
+
                 }
         }
 }
