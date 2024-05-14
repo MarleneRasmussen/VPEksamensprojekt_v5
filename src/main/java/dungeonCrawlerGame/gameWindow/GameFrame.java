@@ -10,14 +10,12 @@ public class GameFrame extends JFrame {
     public static JPanel panel;
     public static Canvas game;
     public static Canvas start;
-    public static Canvas gameOver;
-    public static JFrame frame;
+    public static JFrame gameOver;
 
     public GameFrame(int width, int height) {
         setTitle("Dungeon Crawler");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        frame = this;
 
         /*panel = new JPanel();
         panel.setLayout(new CardLayout());

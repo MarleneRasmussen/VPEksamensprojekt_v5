@@ -35,7 +35,9 @@ public class GameLoop implements Runnable{
         }
         if (GameInit.gameState == GameInit.gameOver){
             Thread.currentThread().interrupt();
-            GameFrame.frame.dispose();
+            GameFrame.game.setVisible(false);
+            GameFrame.gameOver = new GameOver();
+            GameFrame.gameOver.setVisible(true);
         }
     }
 }
